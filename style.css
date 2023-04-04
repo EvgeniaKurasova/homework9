@@ -20,9 +20,6 @@ body{
     padding-left: 15px;
     padding-right: 15px;
 }
-.row{
-    display: flex;
-}
 .col-3{
     max-width: 25%;
     flex: 0 0 25%;
@@ -40,11 +37,12 @@ body{
 .menu{
     display: flex;
 }
-.menu li{
+
+.drop{
     width: 25%;
     border-left: 1px solid #2c71b8;
 }
-.menu li:last-child{
+.drop:last-child{
     border-right: 1px solid #2c71b8;
 }
 
@@ -60,4 +58,33 @@ body{
 .menu a:hover{
     background-color: #2c71b8;
     color: white;
+}
+.menu > li{
+    position: relative;
+}
+.sub-menu{
+    position: absolute;;
+}
+.sub-menu a{
+    color: white;
+    background-color: #2c71b8;
+    text-align: center;
+    text-decoration: none;
+    width: 288px;
+    height: 40px;
+
+}
+.sub-menu a:hover{
+    color: #2c71b8;
+    background-color: white;
+    width: 288px;
+}
+.nav-menu > ul{
+    display: none;
+    position: absolute;
+}
+.nav-menu:hover .sub-menu{
+    display: block;
+    list-style-type: none;
+    position: absolute;
 }
