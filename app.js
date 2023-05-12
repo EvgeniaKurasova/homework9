@@ -64,3 +64,41 @@ formButton.addEventListener("click", (p)=> {
 
 $(".slider").slick();
 
+function Counter(incrementBtn, decrementBtn, inputField){
+    this.domRefs = {
+        incrementBtn,
+        decrementBtn,
+        inputField,
+    };
+    this.toggleButtonState = function () {
+        let count = +this.domRefs.inputField.value;
+        this.domRefs.decrementBtn.disabled = count <= 1;
+        this.domRefs.incrementBtn.disabled = count >= 10;
+    };
+
+    this.increment = function(){
+        this.domRefs.inputField.value = +this.domRefs.inputField.value + 1;
+        this.toggleButtonState();
+    };
+    this.decrement = function(){
+        this.domRefs.inputField.value = +this.domRefs.inputField.value - 1;
+        this.toggleButtonState();
+    };
+
+    this.domRefs.incrementBtn.addEventListener(
+        "click",
+        this.increment.bind(this)
+    );
+    this.domRefs.decrementBtn.addEventListener(
+        "click",
+        this.decrement.bind(this)
+    );
+    console.log(this);
+}
+
+let counter = new Counter(
+    document.querySelectorAll(".increment-button")[0],
+    document.querySelectorAll(".decrement-button")[0],
+    document.querySelectorAll(".product-quantity input")[0]
+);
+console.log(counter);

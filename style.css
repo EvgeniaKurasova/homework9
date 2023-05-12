@@ -339,7 +339,7 @@ justify-content: center;
 .slick-prev{
     width: 65px;
     height: 100px;
-    left: 22px;
+    left: 36px;
     background-image: url(images/211689_left_arrow_icon.png);
     background-size: 65px 100px;
     background-repeat: no-repeat;
@@ -361,14 +361,15 @@ justify-content: center;
     z-index: 1;
 }
 .slick-next{
-    right: 15px;
+    right: 40px;
     width: 65px;
     height: 100px;
     background-size: 65px 100px;
     background-repeat: no-repeat;
     background-image: url(images/211607_right_arrow_icon.png);
+
 }
-.slick-next:before {
+.slick-next::before {
     left: 45px;
     width: 65px;
     height: 100px;
@@ -628,4 +629,8 @@ justify-content: center;
 .btn-close {
     text-align: right;
     cursor: pointer;
+}
+.product-quantity {
+    text-align: center;
+    margin-bottom: 10px;
 }
